@@ -20,4 +20,24 @@ public class StudentServiceImpl implements StudentService {
         LambdaQueryWrapper<Student> wrapper = new LambdaQueryWrapper<>();
         return studentMapper.selectList(wrapper);
     }
+
+    @Override
+    public void save(Student student) {
+        studentMapper.insert(student);
+    }
+
+    @Override
+    public Student findById(Long id) {
+        return studentMapper.selectById(id);
+    }
+
+    @Override
+    public void update(Student student) {
+        studentMapper.updateById(student);
+    }
+
+    @Override
+    public void deleteById(Long id) {
+        studentMapper.deleteById(id);
+    }
 }
